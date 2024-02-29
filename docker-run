@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Define the path to your Docker Compose YAML files
+DOCKER_COMPOSE_FILE="docker-compose.yaml"
+DOCKER_COMPOSE_DEV_FILE="docker-compose.dev.yaml"
+
+docker compose -f "$DOCKER_COMPOSE_FILE" -f "$DOCKER_COMPOSE_DEV_FILE" up -d --build

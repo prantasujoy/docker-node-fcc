@@ -1,0 +1,18 @@
+version: "3.0"
+services:
+  node-app:
+    build:
+      context: .
+      args:
+        NODE_ENV: development
+
+    volumes:
+      - ./:/app:ro
+      - /app/node_modules
+
+    environment:
+      - NODE_ENV=development
+      - MONGO_USER=sujoy
+      - MONGO_PASSWORD=pass12345
+      - SESSION_SECRET=secret1234
+    command: npm run dev

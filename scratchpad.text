@@ -1,0 +1,10 @@
+## bind mount local dir while ignoring app/nod_modules
+docker run -v $(pwd):/app -v /app/node_modules  -p 3000:3000 -d --name node_app docker-node
+
+
+## read only bind mount, container can not write (to local fs)
+docker run -v $(pwd):/app:ro -v /app/node_modules  -p 3000:3000 -d --name node_app docker-node
+
+## By using the -f flag, you can specify multiple Compose files, and they will be merged together, with later files overriding the configurations from earlier ones if there are conflicts. 
+
+docker compose -f docker-compose.yaml -f docker-compose.dev.yaml up -d

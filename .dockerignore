@@ -1,0 +1,17 @@
+node_modules
+
+Dockerfile
+
+.dockerignore
+
+.git 
+
+.env
+
+.gitignore
+
+docker-run
+
+docker-compose*
+
+scratchpad.txt
