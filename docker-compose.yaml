@@ -11,7 +11,7 @@ services:
 
   node-app:
     build: .
-    image: docker pull sujoy95/docker-node-fcc:latest
+    image: sujoy95/docker-node-fcc
     environment:
       - PORT=3000
     depends_on:
