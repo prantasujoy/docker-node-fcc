@@ -69,7 +69,7 @@ app.use(cors({}));
 const port = process.env.port || 3000;
 
 app.get("/api/v1", (req, res) => {
-  res.send("<h2>Hi There,Boss MAN. App is Running</h2>");
+  res.send("<h2>Hi There,Boss MAN/Woman, I am running and this is v2</h2>");
 });
 
 app.use("/api/v1/posts", postRouter);

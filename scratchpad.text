@@ -12,3 +12,17 @@ docker compose -f docker-compose.yaml -f docker-compose.dev.yaml up -d
 docker compose -f docker-compose.yaml -f docker-compose.prod.yaml up -d
 
 docker compose -f docker-compose.yaml -f docker-compose.prod.yaml down
+
+docker compose -f docker-compose.yaml -f docker-compose.prod.yaml build node-app
+
+
+docker compose -f docker-compose.yaml -f docker-compose.prod.yaml push node-app
+
+
+#watch toweer:
+
+docker run -d --name watchtower -e WATCHTOWER_TRACE=true -e WATCHTOWER_DEBUG=true -e WATCHTOWER_POLL_INTERVAL=50 -v /var/run/docker.sock:/car/run/docker.sock containrr/watchtower container_image_to_watch
+
+
+docker run -d --name watchtower -e WATCHTOWER_TRACE=true -e WATCHTOWER_DEBUG=true -e WATCHTOWER_POLL_INTERVAL=50 -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower  docker-node-fcc-node-app-1
+ 
